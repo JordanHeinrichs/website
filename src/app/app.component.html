@@ -1,4 +1,4 @@
 <app-navbar class="mat-elevation-z6"></app-navbar>
-<div class="outlet">
+<div class="outlet" [ngClass]="{'is-handset': isHandset | async}">
     <router-outlet></router-outlet>
 </div>
