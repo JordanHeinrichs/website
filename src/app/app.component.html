@@ -1,8 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
-  <a mat-button [routerLink]="['/']">Jordan Heinrichs</a>
-  <a mat-button [routerLink]="['/projects']">Projects</a>
-  <a mat-button [routerLink]="['/hiking']">Hiking</a>
-  <a mat-button [routerLink]="['/running']">Running</a>
-  <a mat-button [routerLink]="['/contact-me']">Contact Me</a>
-</mat-toolbar>
-<router-outlet></router-outlet>
+<app-navbar class="mat-elevation-z6"></app-navbar>
+<div class="outlet">
+    <router-outlet></router-outlet>
+</div>

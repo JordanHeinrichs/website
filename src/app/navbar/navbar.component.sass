@@ -1,0 +1,20 @@
+.large-window
+  display: block;
+
+.main-row
+  display: flex;
+  .flex-spacer
+    flex: 1 0 auto;
+
+.small-window
+  display: none;
+
+.is-handset
+  .large-window
+    display: none;
+
+  .small-window
+    display: block;
+
+\:host
+  z-index: 3;

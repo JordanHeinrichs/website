@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class SidenavComponent {
   @Input('pageTitle') public title: string = '';
 
-  public isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  public isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );

@@ -12,6 +12,7 @@ import { HikingComponent } from './hiking/hiking.component';
 import { RunningComponent } from './running/running.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SplashPageComponent } from './splash-page/splash-page.component';
     RunningComponent,
     ContactMeComponent,
     SplashPageComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
