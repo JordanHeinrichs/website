@@ -12,7 +12,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="sidenav-content">
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -24,7 +24,9 @@
       </button>
       <span>{{title}}</span>
     </mat-toolbar>
-    <ng-content></ng-content>
+    <div class="page-content">
+      <ng-content></ng-content>
+    </div>
     <mat-toolbar color="primary">
       <span>footer here</span>
     </mat-toolbar>
