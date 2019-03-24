@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule } from '@angular/material';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HikingComponent } from './hiking/hiking.component';
@@ -15,6 +15,8 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { MyWebsiteComponent } from './projects/project-pages/my-website/my-website.component';
+import { ProjectsOverviewComponent } from './projects/projects-overview/projects-overview.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     SplashPageComponent,
     NavbarComponent,
     FooterComponent,
+    MyWebsiteComponent,
+    ProjectsOverviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
