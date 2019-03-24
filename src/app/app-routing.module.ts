@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RunningComponent } from './running/running.component';
-import { SplashPageComponent } from './splash-page/splash-page.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { HikingComponent } from './hiking/hiking.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
-import { ProjectsOverviewComponent } from './projects/projects-overview/projects-overview.component';
-import { PROJECTS } from './projects/project-directory';
 import { getChildrenRoutes } from './blog-list/blog';
+import { HIKING } from './hiking/hiking-directory';
+import { HikingComponent } from './hiking/hiking.component';
+import { HikingOverviewComponent } from './hiking/hiking-overview/hiking-overview.component';
+import { PROJECTS } from './projects/project-directory';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsOverviewComponent } from './projects/projects-overview/projects-overview.component';
+import { RUNNING } from './running/running-directory';
+import { RunningComponent } from './running/running.component';
+import { RunningOverviewComponent } from './running/running-overview/running-overview.component';
+import { SplashPageComponent } from './splash-page/splash-page.component';
 
 const routes: Routes = [
   {
@@ -18,6 +22,7 @@ const routes: Routes = [
   {
     path: 'running',
     component: RunningComponent,
+    children: getChildrenRoutes(RUNNING, RunningOverviewComponent),
   },
   {
     path: 'projects',
@@ -27,6 +32,7 @@ const routes: Routes = [
   {
     path: 'hiking',
     component: HikingComponent,
+    children: getChildrenRoutes(HIKING, HikingOverviewComponent),
   },
   {
     path: 'contact-me',

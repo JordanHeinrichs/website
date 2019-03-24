@@ -12,7 +12,7 @@ export class ProjectsComponent implements OnInit {
   public linkList: MenuLink[] = [];
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.linkList = getMenuList(PROJECTS);
   }
 }
