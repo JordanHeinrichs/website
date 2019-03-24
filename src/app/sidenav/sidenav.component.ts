@@ -15,6 +15,7 @@ export interface MenuLink {
 })
 export class SidenavComponent {
   @Input() public pageTitle = '';
+  @Input() public rootUrl = '';
   @Input() public linkList: MenuLink[] = [];
 
   public isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)

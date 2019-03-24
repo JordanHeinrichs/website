@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuLink } from '../sidenav/sidenav.component';
 import { getMenuList } from '../blog-list/blog';
-import { PROJECTS } from '../projects/project-directory';
+import { RUNNING } from './running-directory';
 
 @Component({
   selector: 'app-running',
@@ -14,6 +14,6 @@ export class RunningComponent implements OnInit {
   constructor() { }
 
   public ngOnInit() {
-    this.linkList = getMenuList(PROJECTS);
+    this.linkList = getMenuList(RUNNING);
   }
 }
