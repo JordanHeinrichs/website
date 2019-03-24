@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContactMeComponent } from './contact-me/contact-me.component';
 import { getChildrenRoutes } from './blog-list/blog';
 import { HIKING } from './hiking/hiking-directory';
 import { HikingComponent } from './hiking/hiking.component';
@@ -33,10 +32,6 @@ const routes: Routes = [
     path: 'hiking',
     component: HikingComponent,
     children: getChildrenRoutes(HIKING, HikingOverviewComponent),
-  },
-  {
-    path: 'contact-me',
-    component: ContactMeComponent,
   },
   {
     path: '**',

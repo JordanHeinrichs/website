@@ -11,7 +11,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HikingComponent } from './hiking/hiking.component';
 import { RunningComponent } from './running/running.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -36,7 +35,6 @@ import { OvalToGpsStravaComponent } from './projects/project-pages/oval-to-gps-s
     ProjectsComponent,
     HikingComponent,
     RunningComponent,
-    ContactMeComponent,
     SplashPageComponent,
     NavbarComponent,
     FooterComponent,

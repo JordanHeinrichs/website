@@ -1,0 +1,13 @@
+<div class="card-container">
+  <a class="card-link" [routerLink]="[blog.url]" *ngFor="let blog of blogs">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{blog.title}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="blog.image">
+      <mat-card-content>
+        {{blog.description}}
+      </mat-card-content>
+    </mat-card>
+  </a>
+</div>

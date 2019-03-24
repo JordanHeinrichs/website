@@ -20,6 +20,8 @@ export class AppComponent {
       domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/strava.svg'));
     matIconRegistry.addSvgIcon('facebook',
       domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/facebook.svg'));
+    matIconRegistry.addSvgIcon('gmail',
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/gmail.svg'));
   }
 
   public isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
