@@ -6,31 +6,23 @@ import { ProjectsComponent } from './projects/projects.component';
 import { HikingComponent } from './hiking/hiking.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { ProjectsOverviewComponent } from './projects/projects-overview/projects-overview.component';
-import { projects } from './projects/project-directory';
-
+import { PROJECTS } from './projects/project-directory';
+import { getChildrenRoutes } from './blog-list/blog';
 
 const routes: Routes = [
-  {
-    path: 'running',
-    component: RunningComponent,
-  },
   {
     path: '',
     pathMatch: 'full',
     component: SplashPageComponent,
   },
   {
+    path: 'running',
+    component: RunningComponent,
+  },
+  {
     path: 'projects',
     component: ProjectsComponent,
-    children: projects.map(project => {
-      return {
-        path: project.url,
-        component: project.component
-      };
-    }).concat({
-      path: '',
-      component: ProjectsOverviewComponent,
-    }),
+    children: getChildrenRoutes(PROJECTS, ProjectsOverviewComponent),
   },
   {
     path: 'hiking',

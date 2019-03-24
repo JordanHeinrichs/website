@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { projects } from '../project-directory';
+import { PROJECTS } from '../project-directory';
 
 @Component({
   selector: 'app-projects-overview',
@@ -10,5 +10,5 @@ export class ProjectsOverviewComponent {
 
   constructor() { }
 
-  public projects = projects;
+  public projects = PROJECTS;
 }

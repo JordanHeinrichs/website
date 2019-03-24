@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuLink } from '../sidenav/sidenav.component';
-import { projects } from './project-directory';
+import { PROJECTS } from './project-directory';
+import { getMenuList } from '../blog-list/blog';
 
 @Component({
   selector: 'app-projects',
@@ -12,6 +13,6 @@ export class ProjectsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.linkList = projects.map(project => ({title: project.title, url: project.url}));
+    this.linkList = getMenuList(PROJECTS);
   }
 }

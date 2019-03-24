@@ -1,14 +1,2 @@
 <p>Some pargraph introducing what I like to do and stuff.</p>
-<div class="card-container">
-  <a class="card-link" [routerLink]="[project.url]" *ngFor="let project of projects">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{project.title}}</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image [src]="project.image">
-      <mat-card-content>
-        {{project.description}}
-      </mat-card-content>
-    </mat-card>
-  </a>
-</div>
+<app-blog-list [blogs]="projects"></app-blog-list>

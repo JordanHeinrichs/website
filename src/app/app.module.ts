@@ -17,6 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MyWebsiteComponent } from './projects/project-pages/my-website/my-website.component';
 import { ProjectsOverviewComponent } from './projects/projects-overview/projects-overview.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProjectsOverviewComponent } from './projects/projects-overview/projects
     FooterComponent,
     MyWebsiteComponent,
     ProjectsOverviewComponent,
+    BlogListComponent,
   ],
   imports: [
     BrowserModule,

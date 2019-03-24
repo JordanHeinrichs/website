@@ -1,14 +1,7 @@
 import { MyWebsiteComponent } from './project-pages/my-website/my-website.component';
+import { Blog } from '../blog-list/blog';
 
-export interface Project {
-  title: string;
-  image: string;
-  description: string;
-  url: string;
-  component: any;
-}
-
-export const projects: Project[] = [
+export const PROJECTS: Blog[] = [
   {
     title: 'Personal website',
     image: 'assets/my-website.png',
