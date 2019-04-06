@@ -20,7 +20,7 @@ export const PROJECTS: Blog[] = [
   },
   {
     title: 'Solar Car',
-    image: 'assets/my-website.png',
+    image: 'assets/solar-car-overview-2.jpg',
     description: 'UofC Solar car team, 4th generation of the vehicle and competing in FSPG 2015',
     url: 'solar-car',
     component: SolarCarComponent,
