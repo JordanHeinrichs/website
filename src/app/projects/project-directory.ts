@@ -13,7 +13,7 @@ export const PROJECTS: Blog[] = [
   },
   {
     title: 'Indoor track to GPS tool',
-    image: 'assets/my-website.png',
+    image: 'assets/oval-overview.png',
     description: 'A tool created for converting indoor training runs to a format for Strava',
     url: 'strava-gps-tool',
     component: OvalToGpsStravaComponent,
