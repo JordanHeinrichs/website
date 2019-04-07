@@ -1,3 +1,7 @@
+@import '../../theme.sass';
+
+$accent: map-get($my-app-theme, accent);
+
 .push-right
   flex: 1 0 auto;
 
@@ -14,3 +18,5 @@
   display: flex;
   justify-items: center;
   color: white;
+  mat-icon:hover
+    fill: mat-color($accent);
