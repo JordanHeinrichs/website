@@ -1,5 +1,4 @@
 import { MenuLink } from '../sidenav/sidenav.component';
-import { Route } from '@angular/router';
 
 export interface Blog {
   title: string;
@@ -10,17 +9,10 @@ export interface Blog {
 }
 
 export function getMenuList(blogs: Blog[]): MenuLink[] {
-  return blogs.map(blog => ({title: blog.title, url: blog.url}));
-}
-
-export function getChildrenRoutes(blogs: Blog[], overviewComponent: any): Route[] {
-  return blogs.map(blog => {
+  return blogs.map(function(blog) {
     return {
-      path: blog.url,
-      component: blog.component
+      title: blog.title,
+      url: blog.url
     };
-  }).concat({
-    path: '',
-    component: overviewComponent,
   });
 }

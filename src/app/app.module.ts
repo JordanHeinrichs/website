@@ -53,7 +53,7 @@ import { OvalToGpsStravaComponent } from './projects/project-pages/oval-to-gps-s
     OvalToGpsStravaComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
