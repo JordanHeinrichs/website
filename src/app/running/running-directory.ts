@@ -14,7 +14,7 @@ export const BOSTON: Blog = {
 
 export const GOLDEN_ULTRA: Blog = {
   title: 'Golden Ultra',
-  image: 'assets/my-website.png',
+  image: 'assets/goldenultracover.jpg',
   description: 'Golden Ultra 2018, my first ultra and trail race. Three days of fun.',
   url: 'golden-ultra',
   component: GoldenUltraComponent,
