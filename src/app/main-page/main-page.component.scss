@@ -2,8 +2,8 @@
   display: flex;
 }
 .contact__icon {
-  height: 24px;
-  width: 24px;
+  height: 48px;
+  width: 48px;
   padding: 10px;
 }
 
@@ -35,6 +35,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  background: #efefef;
 }
 
 .text-section--text {
@@ -76,4 +77,12 @@ main {
   background: #eeeeee;
   overflow-y: auto;
   flex-grow: 1;
+}
+
+.contact-section {
+  display: flex;
+  margin: 5vh;
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: center;
 }
