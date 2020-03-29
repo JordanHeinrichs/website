@@ -1,13 +1,8 @@
-.top-nav {
-  background: #7A6E80;
-  display: flex;
-}
-
 .flex-spacer {
   flex: 1 0 0;
 }
 
-:host() {
+:host {
   display: flex;
   flex-direction: column;
   height: 100vh;
