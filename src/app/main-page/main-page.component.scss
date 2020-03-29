@@ -14,9 +14,10 @@
 }
 
 .main-splash__image {
-  height: 140vh;
-  width: auto;
   align-self: center;
+  height: 140vh;
+  min-width: 100vw;
+  object-fit: cover;
 }
 
 .main-splash__text {
@@ -44,6 +45,7 @@
 
 .text-section--image-container {
   text-align: center;
+  min-height: 300px;
   height: 35vh;
   flex: 1 0 auto;
   margin: 5vh;
@@ -61,8 +63,10 @@
 }
 
 .image-section__image {
-  align-self: center;
-  width: 100%;
+  align-self: flex-start;
+  height: calc(60vh * 1.4);
+  min-width: 100vw;
+  object-fit: cover;
 }
 
 ::ng-deep .simpleParallax {
