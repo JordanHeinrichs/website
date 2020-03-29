@@ -7,16 +7,26 @@
   padding: 10px;
 }
 
-main {
-  padding: 0 30px;
-  margin: 0 auto;
-  max-width: 720px;
-  background: #eeeeee;
+.main-splash {
+  height: 100vh;
+  display: flex;
 }
 
-:host {
-  flex-grow: 1;
-  overflow-y: auto;
+.main-splash__image {
+  height: 140vh;
+  width: auto;
+  align-self: center;
+}
+
+::ng-deep .simpleParallax {
   display: flex;
   flex-direction: column;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  background: #eeeeee;
+  overflow-y: auto;
+  flex-grow: 1;
 }

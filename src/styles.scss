@@ -15,13 +15,14 @@
   }
 }
 
-body {
-  background: #330C48;
-  padding: 0;
-  margin: 0;
-  height: 100vh;
+html, body, app-root, app-main-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-html {
-  height: 100vh;
+body {
+  overflow: hidden;
+  margin:0;
 }
