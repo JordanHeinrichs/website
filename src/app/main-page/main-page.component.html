@@ -1,6 +1,6 @@
 <main #main>
   <section class="main-splash">
-    <img class="main-splash__image" #mainImage src="assets/main-splash.jpg" alt="image">
+    <img class="main-splash__image" #mainImage src="assets/main-splash.jpg" alt="Skiing on the Wapta Glacier">
 
     <div class="main-splash__text" [@loadInFade]="'in'" >
       <h1>Jordan Heinrichs</h1>
@@ -9,17 +9,20 @@
   </section>
 
   <section class="text-section" id="about">
-    <h3>About me</h3>
-    <p>
-      I am a full stack software developer at <a href="https://arterys.com" target="_blank">Arterys</a> working on a cloud based medical imaging application.
-    </p>
-
+    <div class="text-section--text">
+      <h3>About me</h3>
+      <p>
+        I am a full stack software developer at <a href="https://arterys.com" target="_blank">Arterys</a> working on a cloud based medical imaging application.
+      </p>
+    </div>
+    <div class="text-section--image-container">
+      <img class="text-section--image" src="assets/profile.jpg" alt="Profile Picture">
+    </div>
   </section>
 
   <section class="image-section">
     <img #secondImage class="image-section__image" src="assets/main-splash.jpg" alt="image">
   </section>
-
 
   <section id="contact">
     <p>
