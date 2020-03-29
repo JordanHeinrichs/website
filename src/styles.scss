@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+// Background: #330C48
+// Highlight: 4D295B
+// Text background: eeeeee
+// other highlights: 7A6E80
+// idk sommething else: 302940
+
+.button-link--active {
+  color: #330C48;
+}
+
+.button-link {
+  padding: 5px;
+  &:hover {
+    background: greenyellow;
+  }
+}
+
+body {
+  background: #330C48;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+html {
+  height: 100vh;
+}
