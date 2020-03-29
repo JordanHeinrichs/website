@@ -1,20 +1,3 @@
-// Background: #330C48
-// Highlight: 4D295B
-// Text background: eeeeee
-// other highlights: 7A6E80
-// idk sommething else: 302940
-
-.button-link--active {
-  color: #330C48;
-}
-
-.button-link {
-  padding: 5px;
-  &:hover {
-    background: greenyellow;
-  }
-}
-
 html, body, app-root, app-main-page {
   width: 100%;
   height: 100%;
@@ -25,4 +8,5 @@ html, body, app-root, app-main-page {
 body {
   overflow: hidden;
   margin:0;
+  font-family: 'Open Sans', sans-serif;
 }
