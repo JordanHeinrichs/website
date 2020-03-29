@@ -10,6 +10,7 @@
 .main-splash {
   height: 100vh;
   display: flex;
+  position: relative;
 }
 
 .main-splash__image {
@@ -18,9 +19,37 @@
   align-self: center;
 }
 
+.main-splash__text {
+  opacity: 0;
+  position: absolute;
+  left: 20%;
+  bottom: 30%;
+  max-width: 50%;
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+.text-section {
+  min-height: 50%;
+  padding: 5%;
+}
+
+.image-section {
+  position: relative;
+  display: flex;
+  height: 60%;
+}
+
+.image-section__image {
+  align-self: center;
+  width: 100%;
+}
+
 ::ng-deep .simpleParallax {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 main {

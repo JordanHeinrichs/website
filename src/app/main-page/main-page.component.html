@@ -1,21 +1,25 @@
 <main #main>
-  <div class="main-splash">
+  <section class="main-splash">
     <img class="main-splash__image" #mainImage src="assets/main-splash.jpg" alt="image">
 
-  </div>
+    <div class="main-splash__text" [@loadInFade]="'in'" >
+      <h1>Jordan Heinrichs</h1>
+      <h2>Programmer and Athlete</h2>
+    </div>
+  </section>
 
-  <div class="title-text">
-    <h1>Jordan Heinrichs</h1>
-    <h2>Programmer and Athlete</h2>
-  </div>
-
-  <section id="about">
+  <section class="text-section" id="about">
     <h3>About me</h3>
     <p>
       I am a full stack software developer at <a href="https://arterys.com" target="_blank">Arterys</a> working on a cloud based medical imaging application.
     </p>
 
   </section>
+
+  <section class="image-section">
+    <img #secondImage class="image-section__image" src="assets/main-splash.jpg" alt="image">
+  </section>
+
 
   <section id="contact">
     <p>
