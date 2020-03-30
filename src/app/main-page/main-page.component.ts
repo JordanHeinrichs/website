@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import simpleParallax from 'simple-parallax-js';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { } from 'googlemaps';
 
 @Component({
   selector: 'app-main-page',
