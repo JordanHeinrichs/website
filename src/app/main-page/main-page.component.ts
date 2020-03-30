@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import simpleParallax from 'simple-parallax-js';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { } from 'googlemaps';
 
 @Component({
   selector: 'app-main-page',
@@ -19,6 +20,8 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   @ViewChild('main') main: ElementRef;
   @ViewChild('mainImage') mainImage: ElementRef;
   @ViewChild('secondImage') secondImage: ElementRef;
+  @ViewChild('map') mapElement: ElementRef;
+  map: google.maps.Map;
 
   constructor() { }
 
@@ -38,6 +41,15 @@ export class MainPageComponent implements OnInit, AfterViewInit {
       customContainer: this.main.nativeElement
     } as any);
 
+    const mapProperties: google.maps.MapOptions = {
+      center: new google.maps.LatLng(51.1, -114.08),
+      zoom: 13,
+      mapTypeId: google.maps.MapTypeId.TERRAIN,
+      gestureHandling: 'cooperative',
+      mapTypeControl: false,
+      streetViewControl: false,
+    };
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties)
   }
 
 }
