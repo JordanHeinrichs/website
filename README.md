@@ -28,9 +28,20 @@ Steps:
 Overall remaining work:
 1. Finish data processing DONE
 2. Load into google maps DONE
-3. Figure out image hosting/compression/etc
-4. Cleanup frontend (likely ditch Angular and go lightweight)
-5. Figure out hosting/deployment
-6. Get HTTPS cert
+3. Figure out image hosting/compression/etc DONE
+4. Cleanup frontend (likely ditch Angular and go lightweight) DONE
+5. Figure out hosting/deployment DONE
+6. Get HTTPS cert DONE
 7. Add in description/key points/images to the map
 8. Write readme file
+
+Setting up server:
+1. sudo apt-get update
+2. sudo apt-get install nginx
+3. run `npm run build` to generate the production code
+4. mkdir /var/www/jordanheinrichs.com
+4. Scp it over with scp -r dist/* root@167.99.178.133:/var/www/jordanheinrichs.com/
+5. Follow https://medium.com/@jgefroh/a-guide-to-using-nginx-for-static-websites-d96a9d034940
+6. Enable cron with: `1 1 1 */2 * certbot renew --post-hook "systemctl reload nginx"`
+
+
