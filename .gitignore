@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Data files
+data_processing/input_converted
+data_processing/input_data
+data_processing/strava_dump
+data_processing/processed_data

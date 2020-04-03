@@ -1,27 +1,34 @@
 # MyWebsite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+https://github.com/sacridini/Awesome-Geospatial
 
-## Development server
+Plan for data processing:
+0. Download all data from strava DONE
+1. Use gpsbabel to convert all tracks to geojson DONE
+2. Load all into postgis or SpatiaLite/Geospatial or just sqlite or just in memory data structure
+3. hex/rectangle bin it (30 m^2?)
+4. Generate table with column <bin/lat/lon, used>
+5. Generate routes based on the following algorithm:
+  Find unused bin
+  1. Find adjacent hex bin, push onto route, mark both used
+  2. Continue, finding unused
+  3. If no more unused, look for adjacent used, add to route
+  4. Jump back to start, look for adjacent, push front, mark both used
+  Continue until no more unused bins
+6. Export routes in one geojson file
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Steps:
+1. Download data dump from Strava
+2. Unzip all activities with `gunzip *`
+3. Run `sed -r -i 's/^\s+//g' *.tcx` to remove incorrect spacing
+4. Run convert-input (must be using gpsbabel 1.6)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Overall remaining work:
+1. Finish data processing
+2. Load into google maps
+3. Figure out image hosting/compression/etc
+4. Cleanup frontend (likely ditch Angular and go lightweight)
+5. Figure out hosting/deployment
+6. Get HTTPS cert
+7. Add in description/key points/images to the map
