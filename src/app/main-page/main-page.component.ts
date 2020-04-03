@@ -41,14 +41,18 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     } as any);
 
     const mapProperties: google.maps.MapOptions = {
-      center: new google.maps.LatLng(51.1, -114.08),
-      zoom: 13,
+      center: new google.maps.LatLng(51.1, -115.3),
+      zoom: 8,
       mapTypeId: google.maps.MapTypeId.TERRAIN,
       gestureHandling: 'cooperative',
       mapTypeControl: false,
       streetViewControl: false,
     };
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties)
+    this.map.data.loadGeoJson('/assets/strava-data.json');
+    this.map.data.setStyle({
+      strokeColor: 'blue',
+      strokeWeight: 2.5
+    });
   }
-
 }
