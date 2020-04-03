@@ -37,7 +37,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      scriptLoading: 'defer',
       template: 'src/index.html'
     }),
     new CopyPlugin([

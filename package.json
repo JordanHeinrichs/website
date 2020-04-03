@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack -p",
-    "start": "webpack -p && node server.js",
     "convert-input": "ts-node data_processing/convert-input.ts",
     "combine-paths": "ts-node data_processing/combine-paths.ts"
   },
