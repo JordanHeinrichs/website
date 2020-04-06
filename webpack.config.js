@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -46,6 +47,7 @@ module.exports = {
         flatten: true,
       },
     ]),
+    new MiniCssExtractPlugin()
   ],
   output: {
     filename: 'bundle.js',

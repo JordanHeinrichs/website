@@ -1,26 +1,20 @@
 import simpleParallax from 'simple-parallax-js';
 
-const mainImage = document.querySelector('.main-splash__image') as HTMLImageElement;
-const secondImage = document.querySelector('.image-section__image') as HTMLImageElement;
+function loadParallax() {
+  createParallax(document.querySelector('.main-splash__image'));
+  createParallax(document.querySelector('.image-section__image'));
 
-function createParallax(element: Element) {
-  new simpleParallax(element, {
-    delay: 0.4,
-    scale: 1.4,
-    customContainer: document.querySelector('main')
-  } as any);
-}
+  function createParallax(element: HTMLImageElement) {
+    const construct = () => {
+      new simpleParallax(element, {
+        delay: 0.4,
+        scale: 1.4,
+        customContainer: document.querySelector('main')
+      } as any);
+    };
 
-if (mainImage.complete) {
-  createParallax(mainImage);
-} else {
-  mainImage.addEventListener('load', () => createParallax(mainImage));
-}
-
-if (secondImage.complete) {
-  createParallax(secondImage);
-} else {
-  secondImage.addEventListener('load', () => createParallax(secondImage));
+    element.complete ? construct() : element.addEventListener('load', construct);
+  }
 }
 
 let map: google.maps.Map;
@@ -42,3 +36,4 @@ function initMap() {
 }
 
 (window as any).initMap = initMap;
+window.addEventListener('DOMContentLoaded', loadParallax);
