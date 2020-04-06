@@ -50,6 +50,10 @@ module.exports = {
         to: 'assets/',
         flatten: true,
       },
+      {
+        from: 'CNAME',
+        to: '.',
+      },
     ]),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),

@@ -35,13 +35,3 @@ Overall remaining work:
 7. Add in description/key points/images to the map
 8. Write readme file
 
-Setting up server:
-1. sudo apt-get update
-2. sudo apt-get install nginx
-3. run `npm run build` to generate the production code
-4. mkdir /var/www/jordanheinrichs.com
-4. Scp it over with scp -r dist/* root@167.99.178.133:/var/www/jordanheinrichs.com/
-5. Follow https://medium.com/@jgefroh/a-guide-to-using-nginx-for-static-websites-d96a9d034940
-6. Enable cron with: `1 1 1 */2 * certbot renew --post-hook "systemctl reload nginx"`
-
-
