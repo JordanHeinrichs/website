@@ -39,7 +39,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      inject: 'head',
+      templateParameters: {
+        googleApiKey: isDevelopment ? 'AIzaSyCMeqCa06fQf5p1OEDKAYgbXOdfP--gJEY' : 'AIzaSyD_UNh7zQyxuPxWYw_AUOT18ICtHzt6Iuk',
+      }
     }),
     new CopyPlugin([
       {

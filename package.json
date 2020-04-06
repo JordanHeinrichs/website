@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
-    "build": "webpack -p",
+    "build": "NODE_ENV='production' webpack -p",
     "convert-input": "ts-node data_processing/convert-input.ts",
     "combine-paths": "ts-node data_processing/combine-paths.ts"
   },

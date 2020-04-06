@@ -28,7 +28,7 @@ function initMap() {
     streetViewControl: false,
   };
   map = new google.maps.Map(document.querySelector('.map-section--map'), mapProperties)
-  map.data.loadGeoJson('/assets/strava-data.json.gz');
+  map.data.loadGeoJson('/assets/strava-data.json');
   map.data.setStyle({
     strokeColor: 'blue',
     strokeWeight: 2.5
