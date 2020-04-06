@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
     "build": "NODE_ENV='production' webpack -p",
+    "deploy": "npm run build && gh-pages -d dist",
     "convert-input": "ts-node data_processing/convert-input.ts",
     "combine-paths": "ts-node data_processing/combine-paths.ts"
   },
@@ -18,6 +19,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
+    "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^4.0.4",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
