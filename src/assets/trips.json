@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Boston Marathon",
+    "img": "assets/boston.jpg",
+    "coordinates": [42.3496, -71.0782],
+    "content": ["In April 2019 I ran the 123rd Boston Marathon. I had qualified 10 months earlier in Calgary with the time of 2:59:45"]
+  },
+  {
+    "title": "Mount Kitchener and Snowdome",
+    "img": "assets/snowdome.jpg",
+    "coordinates": [52.1684, -117.2806],
+    "content": ["In May 2018 I had the privilege of going up the Athabasca Glacier and skiing Kitchener and Snowdome."]
+  }
+]

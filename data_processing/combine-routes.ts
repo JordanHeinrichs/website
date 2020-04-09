@@ -1,6 +1,6 @@
-import * as path from 'path';
 import * as fs from 'fs';
-import { FeatureCollection, Position, Feature, LineString } from 'geojson';
+import { Feature, FeatureCollection, LineString, Position } from 'geojson';
+import * as path from 'path';
 
 const binSize = 70; // Meters
 // Doesn't really matter what it is. The bins don't need to be exactly the same size everywhere

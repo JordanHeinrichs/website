@@ -123,6 +123,27 @@ main {
   width: 100%;
 }
 
+.map-info {
+  max-width: 600px;
+}
+
+.map-info__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.map-info__text {
+  flex: 1 1 65%;
+}
+
+.map-info__img {
+  flex: 0 1 35%;
+  min-width: 200px;
+  object-fit: contain;
+  width: 100%;
+}
+
 .contact-section {
   display: flex;
   margin: 5vh;
