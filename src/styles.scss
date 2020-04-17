@@ -119,8 +119,12 @@ main {
 }
 
 .map-section--map {
-  height: 100%;
-  width: 100%;
+  /* width/height 100% doesn't work on Safari. Absolutely position instead. */
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .map-info {
