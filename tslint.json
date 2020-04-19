@@ -34,6 +34,7 @@
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
     "no-var-requires": false,
+    "semicolon": [true, "always"],
     "object-literal-key-quotes": [
       true,
       "as-needed"

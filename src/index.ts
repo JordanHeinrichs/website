@@ -30,7 +30,7 @@ function initMap() {
     mapTypeControl: false,
     streetViewControl: false,
   };
-  map = new google.maps.Map(document.querySelector('.map-section--map'), mapProperties)
+  map = new google.maps.Map(document.querySelector('.map-section--map'), mapProperties);
   map.data.loadGeoJson('/assets/strava-data.json');
   map.data.setStyle({
     strokeColor: 'blue',
@@ -50,9 +50,9 @@ interface Trip {
 function generateInfoContent(trip: Trip): string {
   let content =  `<div class="map-info"><h1>${trip.title}</h1><div class="map-info__content"><div class="map-info__text">`;
   trip.content.forEach(paragraph => content += `<p>${paragraph}</p>`);
-  content += `</div><img class="map-info__img" src=${trip.img}>`
+  content += `</div><img class="map-info__img" src=${trip.img}>`;
   content += '</div></div>';
-  return content
+  return content;
 }
 
 function closeDropdown(dropdown: HTMLDivElement): void {
@@ -105,10 +105,10 @@ async function loadTrips() {
       }
     });
 
-    dropdownContainer.appendChild(dropdownButton)
+    dropdownContainer.appendChild(dropdownButton);
 
     dropdown.className = 'map-dropdown__dropdown';
-    dropdownContainer.appendChild(dropdown)
+    dropdownContainer.appendChild(dropdown);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(dropdownContainer);
   } catch(error) {
   }
