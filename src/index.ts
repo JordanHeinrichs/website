@@ -37,7 +37,7 @@ function initMap() {
     strokeWeight: 2.5
   });
   infoWindow = new google.maps.InfoWindow();
-  loadMarkers();
+  loadTrips();
 }
 
 interface Trip {
@@ -55,9 +55,14 @@ function generateInfoContent(trip: Trip): string {
   return content
 }
 
-async function loadMarkers() {
+function closeDropdown(dropdown: HTMLDivElement): void {
+  dropdown.className = 'map-dropdown__dropdown';
+}
+
+async function loadTrips() {
   try {
     const response = await axios.get('/assets/trips.json');
+    const dropdown = document.createElement('div');
     response.data.forEach((trip: Trip) => {
       const marker = new google.maps.Marker({
         map,
@@ -67,8 +72,44 @@ async function loadMarkers() {
       marker.addListener('click', () => {
         infoWindow.setContent(generateInfoContent(trip));
         infoWindow.open(map, marker);
-      })
+      });
+
+      const button = document.createElement('div');
+      button.textContent = trip.title;
+      button.className = 'map-dropdown__button';
+      button.addEventListener('click', () => {
+        map.setCenter(marker.getPosition());
+        infoWindow.setContent(generateInfoContent(trip));
+        infoWindow.open(map, marker);
+        closeDropdown(dropdown);
+      });
+      dropdown.appendChild(button);
     });
+
+    const dropdownContainer = document.createElement('div');
+    dropdownContainer.className = 'map-dropdown';
+
+    const dropdownButton = document.createElement('div');
+    dropdownButton.className = 'map-dropdown__selector';
+    dropdownButton.textContent = 'Trips';
+    dropdownButton.addEventListener('click', () => {
+      if (dropdown.className.includes('--open')) {
+        closeDropdown(dropdown);
+      } else {
+        dropdown.className = 'map-dropdown__dropdown map-dropdown__dropdown--open';
+      }
+    });
+    document.addEventListener('click', (element) => {
+      if (!(element.target instanceof Node) || !dropdownContainer.contains(element.target)) {
+        closeDropdown(dropdown);
+      }
+    });
+
+    dropdownContainer.appendChild(dropdownButton)
+
+    dropdown.className = 'map-dropdown__dropdown';
+    dropdownContainer.appendChild(dropdown)
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(dropdownContainer);
   } catch(error) {
   }
 }
