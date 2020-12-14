@@ -22,8 +22,8 @@ Steps:
 1. Download data dump from Strava
 2. Unzip all activities with `gunzip *`
 3. Run `sed -r -i 's/^\s+//g' *.tcx` to remove incorrect spacing
-4. Run convert-input (must be using gpsbabel 1.6)
-5. Run combine-routes
+4. Run `npm run convert-input` (must be using gpsbabel 1.6)
+5. Run `npm run combine-routes`
 
 Overall remaining work:
 1. Finish data processing DONE

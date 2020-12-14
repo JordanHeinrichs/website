@@ -44,17 +44,18 @@ module.exports = {
         googleApiKey: isDevelopment ? 'AIzaSyCMeqCa06fQf5p1OEDKAYgbXOdfP--gJEY' : 'AIzaSyD_UNh7zQyxuPxWYw_AUOT18ICtHzt6Iuk',
       }
     }),
-    new CopyPlugin([
-      {
-        from: 'src/assets/*',
-        to: 'assets/',
-        flatten: true,
-      },
-      {
-        from: 'CNAME',
-        to: '.',
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'src/assets/*',
+          to: 'assets/[name].[ext]',
+        },
+        {
+          from: 'CNAME',
+          to: '.',
+        },
+      ]
+    }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
   ],
