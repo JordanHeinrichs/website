@@ -48,7 +48,7 @@ module.exports = {
       patterns: [
         {
           from: 'src/assets/*',
-          to: 'assets/[name].[ext]',
+          to: 'assets/[name][ext]',
         },
         {
           from: 'CNAME',
