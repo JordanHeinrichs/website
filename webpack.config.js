@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
+  mode: isDevelopment ? 'development' : 'production',
   entry: [
     './src/index.ts',
     './src/styles.scss',
@@ -28,7 +29,13 @@ module.exports = {
               sourceMap: isDevelopment,
             }
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require("sass"),
+              sourceMap: isDevelopment,
+            }
+          }
         ]
       },
     ]
@@ -52,16 +59,16 @@ module.exports = {
         },
         {
           from: 'CNAME',
-          to: '.',
+          to: './',
         },
       ]
     }),
     new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
   ],
   output: {
     filename: 'bundle.js',
     publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
 }

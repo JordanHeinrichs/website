@@ -1,5 +1,5 @@
 import axios from 'axios';
-import simpleParallax from 'simple-parallax-js';
+import SimpleParallax from "simple-parallax-js/vanilla";
 
 function loadParallax() {
   createParallax(document.querySelector('.main-splash__image'));
@@ -7,11 +7,11 @@ function loadParallax() {
 
   function createParallax(element: HTMLImageElement) {
     const construct = () => {
-      const parallax = new simpleParallax(element, {
+      new SimpleParallax(element, {
         delay: 0.4,
         scale: 1.4,
         customContainer: document.querySelector('main')
-      } as any);
+      });
     };
 
     element.complete ? construct() : element.addEventListener('load', construct);
@@ -21,7 +21,9 @@ function loadParallax() {
 let map: google.maps.Map;
 let infoWindow: google.maps.InfoWindow;
 
-function initMap() {
+async function initMap() {
+  const { Map, InfoWindow } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
+
   const mapProperties: google.maps.MapOptions = {
     center: new google.maps.LatLng(51.1, -115.3),
     zoom: 8,
@@ -29,14 +31,15 @@ function initMap() {
     gestureHandling: 'cooperative',
     mapTypeControl: false,
     streetViewControl: false,
+    mapId: 'cafe155d122ae0c71acdc7c7'
   };
-  map = new google.maps.Map(document.querySelector('.map-section--map'), mapProperties);
+  map = new Map(document.querySelector('.map-section--map'), mapProperties);
   map.data.loadGeoJson('/assets/strava-data.json');
   map.data.setStyle({
     strokeColor: 'blue',
     strokeWeight: 2.5
   });
-  infoWindow = new google.maps.InfoWindow();
+  infoWindow = new InfoWindow();
   loadTrips();
 }
 
@@ -61,10 +64,12 @@ function closeDropdown(dropdown: HTMLDivElement): void {
 
 async function loadTrips() {
   try {
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
+
     const response = await axios.get('/assets/trips.json');
     const dropdown = document.createElement('div');
     response.data.forEach((trip: Trip) => {
-      const marker = new google.maps.Marker({
+      const marker = new AdvancedMarkerElement({
         map,
         position: new google.maps.LatLng(trip.coordinates[0], trip.coordinates[1]),
         title: trip.title
@@ -78,7 +83,7 @@ async function loadTrips() {
       button.textContent = trip.title;
       button.className = 'map-dropdown__button';
       button.addEventListener('click', () => {
-        map.setCenter(marker.getPosition());
+        map.setCenter(marker.position);
         infoWindow.setContent(generateInfoContent(trip));
         infoWindow.open(map, marker);
         closeDropdown(dropdown);
@@ -114,5 +119,7 @@ async function loadTrips() {
   }
 }
 
-(window as any).initMap = initMap;
-window.addEventListener('DOMContentLoaded', loadParallax);
+window.addEventListener('DOMContentLoaded', () => {
+  loadParallax();
+  initMap();
+});
